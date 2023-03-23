@@ -4,9 +4,13 @@
 @import url("global.css");
 
 body {
+  background-color: var(--page-bg);
   font-family: 'Roboto';
   font-size: 16px;
-  color: var(--black);
+  color: var(--page-text);
+  transition:
+    background-color .4s ease,
+    color .4s ease;
 }
 
 /*--- header---<> */
@@ -42,6 +46,24 @@ header {
   width: 20px;
   border-radius: 100%;
   background-color: var(--black);
+  transform: translateX(0);
+  transition:
+    background-color .4s ease,
+    transform .4s ease;
+}
+
+.header-switch.checked {
+  background-color: var(--switch-bg-color);
+}
+
+.header-switch.checked .header-switch-circle {
+  transform: translateX(32px);
+  background-color: #fff;
+}
+
+.header-icon {
+  width: 30px;
+  height: 30px;
 }
 
 /*--- header---</> */
@@ -151,27 +173,27 @@ header {
   margin-bottom: 60px;
 }
 
-@media(max-width:1400px){
-  .main-box{
+@media(max-width:1400px) {
+  .main-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .certificates{
+  .certificates {
     order: 1;
   }
 
-  .competencies{
+  .competencies {
     order: 2;
   }
 
-  .projects{
+  .projects {
     order: 3;
     width: 100%;
   }
 
-  .calculator{
+  .calculator {
     order: 4;
   }
 }
@@ -252,6 +274,10 @@ footer {
 
 .footer-up {
   background-color: inherit;
+}
+
+.footer-icon {
+  fill: var(--page-icon-fill);
 }
 
 /* ---footer---</> */
