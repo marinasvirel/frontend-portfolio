@@ -1,5 +1,5 @@
 /* максимальная ширина экрана */
- $maxwidth:1324px;
+ $maxwidth:100%;
 /* минимальная ширина*/
  $minwidth:320px;
 
@@ -21,6 +21,17 @@
   $red: #E80606;
   /* Зеленый для валидных инпутов*/
   $green: #215927;
-// errows
+/*    -----     */
 $color-1:#19365f;
 $color-2:rgba(26, 101, 174, 0.7);
+
+/*   слайдер проекты     */
+
+$handle-size: 3rem;
+  $img-gap: .25rem;
+  // $color-1:#19365f;
+  // $color-2:rgba(26, 101, 174, 0.7);
+  $color-1:#19365f;
+// $color-2:rgba(26, 101, 174, 0.7);
+  $items-per-screen: 2;
+ $slider-index: 0; 

@@ -1,13 +1,23 @@
-
 @import 'module/vars';
 @import 'module/mixins';
+
+:root {
+  --handle-size: 3rem;
+  --img-gap: .25rem;
+  --color-1:#19365f;
+  --color-2:rgba(26, 101, 174, 0.7);
+}
 
 *{
     margin:0;
     padding:0;
 }
+
 html,body{
     background-color: $white; 
+    display:flex;
+justify-content: center;
+     align-items: center;
 }
 .wrapper{
     display:flex;
@@ -39,10 +49,12 @@ html,body{
 }
 }
 
+
+
 @media(max-width:425px){
 .wrapper{
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+        padding-right: 10px;
     background-position: bottom 150px center;
     background-size: contain;
 }

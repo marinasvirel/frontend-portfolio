@@ -1,14 +1,49 @@
-// ------
-let slidrContainer = document.getElementById('slider');
-let arrImg = "";
-for (let i = 1; i <= 3; i++) {
-arrImg+=`<img src="images/${i}.png">`;
+// ----блок добавления изображений в DOM дерево--
+
+let img = new Image();
+
+  let containerslider = document.querySelector(".containerslider");
+
+
+// img.onload = function () {
+  // containerslider.style.height = 'none';
+
+ let slidrContainer = document.getElementById("slider");
+ let arrImg = "";
+  
+  for (let i = 1; i <= 3; i++) {
+    arrImg += `<img class="sertyficat" src="images/${i}.png">`;
+
+    img.src = `images/${i}.png`;
+   
+  }
+  slidrContainer.innerHTML = arrImg;
+  
+// };
+
+let sliderContainerLeft = document.querySelector(".slider-left");
+let sliderLeft = document.querySelectorAll(".slider-left .sertyficat");
+alert(sliderLeft.length);
+if (!img.src) {
+  slidrContainer.innerHTML = "";
+  sliderContainerLeft.style.backgroundImage = "url('./images/sliderbg.png')";
 }
 
-slidrContainer.innerHTML = arrImg;
+  img.onerror = function () {
+    containerslider.style.height = '100%'; //делаем видимым дефолтное изображение
+    slidrContainer.innerHTML = ""; // удаляем стрелки и буллиты слайдера
+    // alert('ошибка 404 не найдено изображение');
+    // containerslider.style.backgroundImage = "url('../images/sliderbg.png')";
+ 
+  };
+
 // -------
 
+
+
 function slider(selector) {
+
+  // ----------
   let slider = $(selector);
   let imgs = slider.children();
  
@@ -29,8 +64,12 @@ function slider(selector) {
       if (a.hasClass("slider__arrow-left")) {
         next = current - 1 >= 0 ? current - 1 : imgs.length - 1;
         left = true;
+       
       } else if (a.hasClass("slider__arrow-right")) {
         next = (current + 1) % imgs.length;
+      
+       
+        //  -----
       } else {
         next = a.index();
         left = next < current ? true : false;
@@ -91,6 +130,8 @@ function slider(selector) {
       slider.find(".slider__dot").eq(next).addClass("slider__dot_active");
 
       // ---
+      
+
       temp.animate(animate, 500, function () {
         temp.remove();
       });
@@ -112,4 +153,26 @@ function slider(selector) {
     .eq(0)
     .addClass("slider__slide_active");
 }
+
 slider("#slider");
+
+  // -----
+        // img.onload = function () {
+        //   let images = document.querySelectorAll(".sertyficat");
+        //   images.forEach((item, i) => {
+           
+        //     if (current== 2) {
+                           
+        //                       item.style.objectFit = "contain";
+        //                     setTimeout(() => {
+        //                       item.style.objectFit = "cover";
+        //                     }, 500);
+
+              
+        //     }else{
+        //       setTimeout(() => { item.style.objectFit = "contain"; }, 500);
+        //      item.style.objectFit = "cover";
+        //     }
+        //   });
+
+        // }; 
