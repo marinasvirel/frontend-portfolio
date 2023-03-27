@@ -1,4 +1,8 @@
 window.onload = function () {
+  let images = document.querySelectorAll(".slider-right img");
+   
+ 
+  
   document.addEventListener("click", (e) => {
     let handle;
     if (e.target.matches(".handle")) {
@@ -48,6 +52,9 @@ window.onload = function () {
     const sliderIndex = parseInt(
       getComputedStyle(slider).getPropertyValue("--slider-index")
     );
+   
+     
+    
     const progressBarItemCount = progressBar.children.length;
     if (handle.classList.contains("left-handle")) {
       if (sliderIndex - 1 < 0) {
@@ -64,9 +71,15 @@ window.onload = function () {
     if (handle.classList.contains("right-handle")) {
       if (sliderIndex + 1 >= progressBarItemCount) {
         slider.style.setProperty("--slider-index", 0);
+    
+      
+       
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[0].classList.add("active");
       } else {
+        
+       
+        
         slider.style.setProperty("--slider-index", sliderIndex + 1);
         progressBar.children[sliderIndex].classList.remove("active");
         progressBar.children[sliderIndex + 1].classList.add("active");

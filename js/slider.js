@@ -23,7 +23,7 @@ let img = new Image();
 
 let sliderContainerLeft = document.querySelector(".slider-left");
 let sliderLeft = document.querySelectorAll(".slider-left .sertyficat");
-alert(sliderLeft.length);
+
 if (!img.src) {
   slidrContainer.innerHTML = "";
   sliderContainerLeft.style.backgroundImage = "url('./images/sliderbg.png')";
@@ -51,9 +51,9 @@ function slider(selector) {
     .addClass("slider")
     .append('<a class="slider__arrow slider__arrow-left"></a>')
     .append('<div class="slider__slides"></div>')
-    .append('<div class="slider__dots"></div>')
+    // .append('<div class="slider__dots"></div>')
     .append('<a class="slider__arrow slider__arrow-right"></a>')
-    .on("click", ".slider__arrow, .slider__dot", function (e) {
+    .on("click", ".slider__arrow", function (e) {
       e.preventDefault();
       let a = $(this);
       let active = slider.find(".slider__slide_active");
@@ -125,9 +125,9 @@ function slider(selector) {
       }
       // ---
       active.removeClass("slider__slide_active");
-      slider.find(".slider__dot_active").removeClass("slider__dot_active");
+      // slider.find(".slider__dot_active").removeClass("slider__dot_active");
       imgs.eq(next).addClass("slider__slide_active");
-      slider.find(".slider__dot").eq(next).addClass("slider__dot_active");
+      // slider.find(".slider__dot").eq(next).addClass("slider__dot_active");
 
       // ---
       
@@ -138,17 +138,17 @@ function slider(selector) {
       // ---
     });
   let slides = slider.children(".slider__slides");
-  let dots = slider.children(".slider__dots");
+  // let dots = slider.children(".slider__dots");
 
   imgs
     .prependTo(slides)
-    .each(function (i) {
-      if (!i) {
-        dots.append('<a class="slider__dot slider__dot_active"></a>');
-      } else {
-        dots.append('<a class="slider__dot"></a>');
-      }
-    })
+    // .each(function (i) {
+    //   if (!i) {
+    //     dots.append('<a class="slider__dot slider__dot_active"></a>');
+    //   } else {
+    //     dots.append('<a class="slider__dot"></a>');
+    //   }
+    // })
     .addClass("slider__slide")
     .eq(0)
     .addClass("slider__slide_active");
