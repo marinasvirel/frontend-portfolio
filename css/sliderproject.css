@@ -1,0 +1,29 @@
+.project-slider .swiper {
+    margin: 0 auto;
+    max-width: 840px;
+ 
+}
+ .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+    }
+
+   .project-slider .swiper .swiper-slide img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3/2.4;
+      object-fit: cover;
+    }
+    .slider__arrow-left2{
+    left: 50px;
+    transform: rotate(-135deg);
+}
+.slider__arrow-right2{
+    right: 50px;
+    transform: rotate(45deg);
+}
