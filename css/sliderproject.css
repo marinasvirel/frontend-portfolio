@@ -14,11 +14,17 @@
     }
 
    .project-slider .swiper .swiper-slide img {
+      /* display: block;
+      width: 100%; */
+      /* aspect-ratio: 3/2.4; */
+      /* object-fit: cover; */
+    }
+    .img-project{
       display: block;
       width: 100%;
       aspect-ratio: 3/2.4;
       object-fit: cover;
-    }
+}
     .slider__arrow-left2{
     left: 50px;
     transform: rotate(-135deg);
