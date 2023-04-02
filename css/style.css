@@ -9,8 +9,12 @@ body {
   font-family: 'Roboto';
   font-size: 16px;
   color: var(--black);
+  transition:0.3s;
 }
-
+.body-dark{
+  background: #1C2127;
+  color:  var(--white);
+}
 /*--- header---<> */
 
 header {
@@ -44,8 +48,25 @@ header {
   width: 20px;
   border-radius: 100%;
   background-color: var(--black);
+  transition:0.3s;
 }
-
+.header-switch-active{
+ background-color: var(--black);
+ filter: drop-shadow(0px 4px 10px rgba(93, 135, 177, 0.5));
+  }
+.header-switch-circle-active{
+  left: 37px;
+  background-color: var(--white);
+}
+.entry-dark{
+  fill: var(--white);
+}
+.input-dark{
+  background-color: var(--black);
+}
+.textarea-dark{
+  background-color: var(--black);
+}
 /*--- header---</> */
 
 /* ---prime---<> */
