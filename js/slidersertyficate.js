@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper1", {
+const swiper1 = new Swiper(".swiper1", {
   direction: "horizontal",
   loop: true,
   slidesPerView: 1,
@@ -10,21 +10,19 @@ const swiper = new Swiper(".swiper1", {
   },
 });
 
-window.onload = function () {
-  
+
   let sertyficatesContainer = document.querySelector(".certificates-slider");
  
 
-  let swiper1 = document.querySelector(".swiper1");
+  let swiperCont1 = document.querySelector(".swiper1");
   // let img1 = new Image();
-
-  if (swiper1.clientHeight < 50) {
-   swiper1.style.display = "none";
+  
+  if (swiperCont1.clientHeight < 50) {
+   swiperCont1.style.display = "none";
    sertyficatesContainer.classList.add("certificatas-bg");
     
   }
   else {
-     swiper1.style.display = "block";
+     swiperCont1.style.display = "block";
     sertyficatesContainer.classList.remove("certificatas-bg");
   }
-}
